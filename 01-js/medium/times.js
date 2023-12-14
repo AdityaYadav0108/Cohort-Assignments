@@ -9,5 +9,24 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
-}
+    let date = new Date();
+    let currTime = date.getTime();
+    let sum = 0;
+  
+    for (let i = 1; i <= n; i++) {
+      sum += i;
+    }
+  
+    let afterDone = date.getTime();
+  
+    let timeTaken = afterDone - currTime;
+  
+    console.log(sum);
+  }
+  
+  for (let i = 0; i < 1000; i++) {
+    console.time("Time taken");
+    calculateTime(100000);
+    console.timeEnd("Time taken");
+  }
+  
